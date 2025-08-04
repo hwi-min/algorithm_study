@@ -37,3 +37,25 @@ for i in range(N-7): # 행에서의 8 X 8 시작점
         min_coloring = min(min_coloring, recoloring_b, recoloring_w)
 
 print(f"{min_coloring}")
+
+"""
+    0 1 2 3 4 5 6 7
+0 | W B W B W B W B
+1 | B W B W B W B W
+2 | W B W B W B W B
+3 | B W B W B W B W
+4 | W B W B W B W B
+5 | B W B W B W B W
+6 | W B W B W B W B
+7 | B W B W B W B W
+
+    0 1 2 3 4 5 6 7
+0 | B W B W B W B W
+1 | W B W B W B W B
+2 | B W B W B W B W
+3 | W B W B W B W B
+4 | B W B W B W B W
+5 | W B W B W B W B
+6 | B W B W B W B W
+7 | W B W B W B W B
+"""
