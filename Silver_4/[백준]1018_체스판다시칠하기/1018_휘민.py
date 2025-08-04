@@ -39,6 +39,13 @@ for i in range(N-7): # 행에서의 8 X 8 시작점
 print(f"{min_coloring}")
 
 """
+1. 완전 탐색
+- 가능한 모든 8*8를 순회하면서 최소의 색칠을 필요로하는 경우를 찾음
+
+2. (고려) 스택
+- 스택을 활용해서 prev와 current의 색이 같으면  color += 1??
+
+3. 목표로 하는 체스판에서의 규칙 찾기
     0 1 2 3 4 5 6 7
 0 | W B W B W B W B
 1 | B W B W B W B W
