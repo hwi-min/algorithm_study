@@ -1,4 +1,4 @@
-"""푸는중.. 넘무 어렵네요..."""
+"""푸는중.. 머리깨지겠어요 우뜨카라고 어떠카라고 ....."""
 
 # import sys
 # sys.stdin = open('input_2105.txt')
@@ -67,6 +67,10 @@
 #
 #     print(f"#{t} {max_dessert}")
 
+
+import sys
+sys.stdin = open('input_2105.txt')
+
 direction = [(1, 1), (-1, 1), (-1, -1), (1, -1)]
 
 def dfs(x, y, path_len, dir_idx):
@@ -78,14 +82,26 @@ def dfs(x, y, path_len, dir_idx):
     """
     global max_dessert, N, start_x, start_y, dessert_set
 
-    # 1. 종료 조건: 마지막 방향으로 이동하던 중에 시작점에 돌아온 경우
-    if dir_idx == 3 and (x + direction[3][0] == start_x) and (y + direction[3][1] == start_y):
-        if path_len + 1 > max_dessert: max_dessert = path_len + 1 # 현재까지 지나온 경로가 max_dessert보다 큰 경우 업데이트
-        return # 아니라면 반환
-
-    # 2. 다음으로 이동
+    # 1. 다음으로 이동
     # 현재 방향으로 이동 or 방향 전환 이동
-    for i in range()
+    for i in range(dir_idx, dir_idx+2):
+        if i >= 4: # 인덱스를 벗어나면 아무것도 하지 않음
+            continue 
+
+        nx, ny = x + direction[i][0], y + direction[i][1]
+
+        if i == 3 and nx == start_x and ny == start_y:
+            if path_len + 1 > max_dessert:
+                max_dessert = path_len + 1
+            return
+
+        # 가지치기: cafe_map 안에 없거나, 이미 먹은 디저트라면 아무것도 하지 않음
+        if not (0 <= nx < N and 0 <= ny < N) or cafe_map[nx][ny] in dessert_set:
+            continue
+
+        dessert_set.add(cafe_map[nx][ny]) # 디저트를 set에 추가
+        dfs(nx, ny, path_len + 1, i)
+        dessert_set.remove(cafe_map[nx][ny]) # 백트래킹
 
 T = int(input())
 for t in range(1, T+1):
