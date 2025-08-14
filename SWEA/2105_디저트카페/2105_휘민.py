@@ -6,9 +6,6 @@ direction = [(1, 1), (1, -1), (-1, -1), (-1, 1)]
 def dfs(row, col, dir, cnt, dessert):
     global max_dessert, start_row, start_col
     # 갈 수 있는 방향 인덱스를 벗어나면 return
-    if t == 1:
-        # print(f"current row: {row}, current col: {col}, dir: {dir}, cnt: {cnt}, dessert: {dessert}, max_dessert: {max_dessert}")
-
     if dir > 3:
         return
 
@@ -18,7 +15,7 @@ def dfs(row, col, dir, cnt, dessert):
         return
 
     # 시작점과 동일하지 않고 이미 먹은 디저트라면
-    # if row != start_row and col != start_col and cafe_map[row][col] in dessert: 하면 안됨.. 
+    # if row != start_row and col != start_col and cafe_map[row][col] in dessert: 하면 안됨..
     if cafe_map[row][col] in dessert:
         return # 더 이상 탐색하지 않음
 
