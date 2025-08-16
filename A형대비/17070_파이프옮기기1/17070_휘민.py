@@ -22,7 +22,7 @@ def dfs(row, col, dir):
         if col + 1 < N and houses[row][col+1] != 1:
             dfs(row, col+1, 0)
         # 대각선으로 이동 가능한지 확인
-        if col + 1 < N and row + 1 < N and houses[row+1][col+1] != 1:
+        if col + 1 < N and row + 1 < N and houses[row+1][col+1] != 1 and houses[row][col+1] != 1 and houses[row+1][col] != 1:
             dfs(row+1, col+1, 1)
 
     elif dir == 1:
@@ -30,7 +30,7 @@ def dfs(row, col, dir):
         if col + 1 < N and houses[row][col + 1] != 1:
             dfs(row, col + 1, 0)
         # 대각선으로 이동 가능한지 확인
-        if col + 1 < N and row + 1 < N and houses[row + 1][col + 1] != 1:
+        if col + 1 < N and row + 1 < N and houses[row+1][col+1] != 1 and houses[row][col+1] != 1 and houses[row+1][col] != 1:
             dfs(row + 1, col + 1, 1)
         # 세로로 이동 가능한지 확인
         if row + 1 < N and houses[row+1][col] != 1:
@@ -38,7 +38,7 @@ def dfs(row, col, dir):
 
     elif dir == 2:
         # 대각선으로 이동 가능한지 확인
-        if col + 1 < N and row + 1 < N and houses[row + 1][col + 1] != 1:
+        if col + 1 < N and row + 1 < N and houses[row+1][col+1] != 1 and houses[row][col+1] != 1 and houses[row+1][col] != 1:
             dfs(row + 1, col + 1, 1)
         # 세로로 이동 가능한지 확인
         if row + 1 < N and houses[row + 1][col] != 1:
