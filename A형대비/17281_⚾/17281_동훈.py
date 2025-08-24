@@ -32,7 +32,6 @@ def baseball_simulation(batting_order):
         base.clear()
         outcount = 0
         while outcount < 3:
-            
             # N번째 이닝에서 idx번째 선수의 배팅포인트
             batting = record[now_innings][batting_order[idx]]
             
@@ -52,7 +51,6 @@ def baseball_simulation(batting_order):
             idx = (idx + 1) % 9
         # 이닝 끝
         now_innings += 1
-
     # 최대점수와 비교
     max_score = max(max_score, score)
 
