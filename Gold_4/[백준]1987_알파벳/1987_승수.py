@@ -33,6 +33,7 @@ start_r, start_c = 0, 0 # 시작 위치
 max_count = 0           # 지날 수 있는 최대 칸 수 (0으로 초기화)
 
 # used_alphabet = set()   # 지나간 알파벳 저장
+# used_alphabet.add(board[start_r][start_c])  # 시작 위치 알파벳 저장
 used_alphabet = [False] * 26
 
 used_alphabet[ord(board[start_r][start_c]) - 65] = True  # 시작 위치 알파벳 저장
